@@ -1,0 +1,15 @@
+# logs
+*.log
+
+# latex render artifacts
+*.aux
+*.out
+*.bcf
+*.nav
+*.idx
+*.snm
+*.toc
+*.run.xml
+
+# YouTube folder
+yt
