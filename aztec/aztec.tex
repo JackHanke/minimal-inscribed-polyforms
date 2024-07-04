@@ -493,42 +493,75 @@ For the $n,m \geq 2$ case, we begin by indexing the cells for reference.
         \lablcell{4.5}{1.5}{3}{0}
         \cellw{4}{1}{5}{2}
         % row 3
+        \lablcell{0.5}{2.5}{0}{5}
         \cellw{0}{2}{1}{3}
+        \lablcell{1.5}{2.5}{1}{4}
         \cellw{1}{2}{2}{3}
+        \lablcell{2.5}{2.5}{2}{3}
         \cellw{2}{2}{3}{3}
+        \lablcell{3.5}{2.5}{3}{2}
         \cellw{3}{2}{4}{3}
+        \lablcell{4.5}{2.5}{4}{1}
         \cellw{4}{2}{5}{3}
+        \lablcell{5.5}{2.5}{5}{0}
         \cellw{5}{2}{6}{3}
         % row 4
+        \lablcell{0.5}{3.5}{1}{6}
         \cellw{0}{3}{1}{4}
+        \lablcell{1.5}{3.5}{2}{5}
         \cellw{1}{3}{2}{4}
+        \lablcell{2.5}{3.5}{3}{4}
         \cellw{2}{3}{3}{4}
+        \lablcell{3.5}{3.5}{4}{3}
         \cellw{3}{3}{4}{4}
+        \lablcell{4.5}{3.5}{5}{2}
         \cellw{4}{3}{5}{4}
+        \lablcell{5.5}{3.5}{6}{1}
         \cellw{5}{3}{6}{4}
+        \lablcell{6.5}{3.5}{7}{0}
         \cellw{6}{3}{7}{4}
         % row 5
+        \lablcell{1.5}{4.5}{3}{6}
         \cellw{1}{4}{2}{5}
+        \lablcell{2.5}{4.5}{4}{5}
         \cellw{2}{4}{3}{5}
+        \lablcell{3.5}{4.5}{5}{4}
         \cellw{3}{4}{4}{5}
+        \lablcell{4.5}{4.5}{6}{3}
         \cellw{4}{4}{5}{5}
+        \lablcell{5.5}{4.5}{7}{2}
         \cellw{5}{4}{6}{5}
+        \lablcell{6.5}{4.5}{8}{1}
         \cellw{6}{4}{7}{5}
+        \lablcell{7.5}{4.5}{9}{0}
         \cellw{7}{4}{8}{5}
         % row 6
+        \lablcell{2.5}{5.5}{5}{6}
         \cellw{2}{5}{3}{6}
+        \lablcell{3.5}{5.5}{6}{5}
         \cellw{3}{5}{4}{6}
+        \lablcell{4.5}{5.5}{7}{4}
         \cellw{4}{5}{5}{6}
+        \lablcell{5.5}{5.5}{8}{3}
         \cellw{5}{5}{6}{6}
+        \lablcell{6.5}{5.5}{9}{2}
         \cellw{6}{5}{7}{6}
+        \lablcell{7.5}{5.5}{10}{1}
+        \lablcell{7.5}{5.5}{10}{1}
         \cellw{7}{5}{8}{6}
-
+        
+        \lablcell{3.5}{6.5}{7}{6}
         \cellw{3}{6}{4}{7}
+        \lablcell{4.5}{6.5}{8}{5}
         \cellw{4}{6}{5}{7}
+        \lablcell{5.5}{6.5}{9}{4}
         \cellw{5}{6}{6}{7}
+        \lablcell{6.5}{6.5}{10}{3}
         \cellw{6}{6}{7}{7}
-
+        
+        \lablcell{4.5}{7.5}{9}{6}
         \cellw{4}{7}{5}{8}
+        \lablcell{5.5}{7.5}{10}{5}
         \cellw{5}{7}{6}{8}
     \end{tikzpicture}
 \end{center}
@@ -707,7 +740,7 @@ The subclass $c_0$ counts the number of polyforms that contain two corners and i
 \end{center}
 
 We have that the generating function for $c_0$ is
-$$C_0(x,y)=\frac{x^3 y (1-y) + y^3 x (1-x)}{(1-x)^2(1-y)^2}.$$
+$$C_0(x,y)=\frac{}x^3y^2{(1-x)^2 (1-y)} + \frac{}x^2y^3{(1-x) (1-y)^2}.$$
 
 The subclass $c_1$ counts the number of polyforms that contain the ``thin u" substructure. The substructure and an example polyform in $c_1$ can be found below. 
 
@@ -969,10 +1002,11 @@ or
 
 
 This class has the following generating function.
-$$C_3(x,y)=\frac{xy}{(1-x)^2(1-y)^2}+\frac{x^4 y}{(1-x)^3(1-y)}+\frac{xy^4}{(1-x)(1-y)^3}.$$
+$$C_3(x,y)=\frac{xy}{(1-x)^2(1-y)^2}+\frac{x^4 y^2}{(1-x)^3(1-y)}+\frac{x^2y^4}{(1-x)(1-y)^3}.$$
+$$C_3(x,y)=\frac{xy}{(1-x)^2(1-y)^2}+\frac{x^4 y^2}{(1-x)^3(1-y)}+\frac{x^2y^4}{(1-x)(1-y)^3} - \frac{xy}{(1-x)^2} - \frac{xy}{(1-y)^2} + xy.$$
 
-Note that for the combination of the generating functions, we must remove the $1,1$ term, ie
-$$C(x,y)=C_0(x,y)+C_1(x,y)+C_2(x,y)+C_3(x,y)-xy.$$
+Note that we must add additional corrective terms the generating function of $c$, namely
+$$C(x,y)=(C_0+C_1+C_2+C_3)(x,y) -\frac{x^2 y}{(1-x)^4} -\frac{x y^2}{(1-y)^4} + \frac{x^2+y}{1-x} + \frac{x+y^2}{1-y}-xy.$$
 
 All polyforms not counted by $cc$ or $c$ are counted in $i$. $i$ can also be split into subclasses, namely $i_0,i_1,i_{1,1},r_1,i_2,i_3,i_4, i_5$, as well as the corrective term $r_3$ so that 
 $$i(n,m)=(2i_{0}+4i_{1}+4i_{1,1}+r_1+2i_{2}+2i_{3}-r_3 + 4i_{4} + i_5)(n,m).$$
@@ -1034,7 +1068,7 @@ The subclass $i_0$ counts the number of polyforms of the following type
 \end{equation*}
 
 \begin{equation*}
-    \sum_{n,m \geq 0}i_0(n,m)x^n y^m = \frac{2 x^2 y^2}{(1-x)^2 (1-y)^2} + \frac{x^3 y^2}{(1-x)^3(1-y)^2} + \frac{x^2 y^3}{(1-x)^2 (1-y)^3}
+    I_0(x,y) = \sum_{n,m \geq 0}i_0(n,m)x^n y^m = \frac{2 x^2 y^2}{(1-x)^2 (1-y)^2} + \frac{x^3 y^2}{(1-x)^3(1-y)^2} + \frac{x^2 y^3}{(1-x)^2 (1-y)^3}
 \end{equation*}
 
 The subclass $i_1$ counts the number of polyforms of the following type
@@ -1091,7 +1125,7 @@ The subclass $i_1$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{equation*}
-    \sum_{n,m \geq 0} i_1(n,m)x^n y^m = C_1(x,y)\left(\frac{1}{(1-x)(1-y)}-1\right)
+    I_1(x,y) = \sum_{n,m \geq 0} i_1(n,m)x^n y^m = C_1(x,y)\left(\frac{1}{(1-x)(1-y)}-1\right)
 \end{equation*}
 
 The subclass $i_{1,1}$ counts the number of polyforms of the following type
@@ -1148,7 +1182,7 @@ The subclass $i_{1,1}$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{equation*}
-    \sum_{n,m \geq 0} i_{1,1}(n,m)x^n y^m = \frac{2 x^2 y^3}{(1-x)^2 (1-y)^3} + \frac{2 x^3 y^2}{(1-x)^3 (1-y)^2 } + \frac{2x^2 y^4}{(1-x)^2 (1-y)^4} + \frac{2x^4 y^2}{(1-x)^4 (1-y)^2}
+    I_{1,1}(x,y) = \sum_{n,m \geq 0} i_{1,1}(n,m)x^n y^m = \frac{2 x^2 y^3}{(1-x)^2 (1-y)^3} + \frac{2 x^3 y^2}{(1-x)^3 (1-y)^2 } + \frac{2x^2 y^4}{(1-x)^2 (1-y)^4} + \frac{2x^4 y^2}{(1-x)^4 (1-y)^2}
 \end{equation*}
 
 The corrective term $r_1$ counts all the polyforms in $i_1$ that are double counted when reflecting along both axes. An example polyform is below.
@@ -1205,7 +1239,7 @@ The corrective term $r_1$ counts all the polyforms in $i_1$ that are double coun
 \end{center}
 
 \begin{equation*}
-    r_1(n,m) = 2m(m-1)(n-2)+ 2n(n-1)(m-2)
+    R_1(x,y) = \sum_{n,m \geq 0} r_1(n,m)x^n y^m = \frac{2x^2 y^4}{(1-x)^4 (1-y)} + \frac{2x^4 y^2}{(1-x) (1-y)^4}
 \end{equation*}
 
 The subclass $i_2$ counts the number of polyforms of the following type
@@ -1262,9 +1296,11 @@ The subclass $i_2$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{eqnarray*}
-    i_2(n,m) & = & \sum_{i=0}^{n}\sum_{j=0}^{m} c_2(i,j) \\
-    & - & c_2(n,m) - 2((n-1)(m-1)-1)\\
+    I_2(x,y) = \sum_{n,m\geq 0}i_2(n,m)x^n y^m & = & C_2(x,y)\left(\frac{1}{(1-x)(1-y)} -1\right) -\frac{x^3 y}{(1-x)^5} + \frac{x^2 y}{(1-x)^2} -\frac{x^2 y}{(1-x)} \\
+    & - & \frac{x y^3}{(1-y)^5} + \frac{x y^2}{(1-y)^2} -\frac{x y^2}{(1-y)} - \frac{2x^2 y^2}{(1-x)^2 (1-y)^2} + \frac{2}{(1-x)(1-y)} \\
+    & - & \frac{2xy+2}{1-x} - \frac{2xy + 2}{1-y} + 2xy + 2\\
 \end{eqnarray*}
+
 
 The subclass $i_3$ counts the number of polyforms of the following type
 
@@ -1320,9 +1356,9 @@ The subclass $i_3$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{eqnarray*}
-    i_3(n,m) & = & \sum_{i=0}^{n}\sum_{j=0}^{m-3} \frac{2}{3}\binom{i+j}{i-j}_2 (n-1-i)((m-1-j)(m-1-j)^2-1) \\
-    & + & \sum_{i=0}^{n-3}\sum_{j=0}^{m} \frac{2}{3} \binom{i+j}{i-j}_2 (n-1-i)(m-1-j)((n-1-i)^2 -1) \\
+    I_3(x,y) = \sum_{n,m \geq 0}i_3(n,m)x^n y^m & = & F(x,y)\left(\frac{4x^2 y^3}{(1-x)^2 (1-y)^4} + \frac{4x^3 y^2}{(1-x)^4 (1-y)^2}\right) \\
 \end{eqnarray*}
+
 
 The corrective term $r_3$ counts the number of polyforms in $i_3$ that are double-counted when reflecting along bothe axes. An example polyform is below.
 
@@ -1378,10 +1414,8 @@ The corrective term $r_3$ counts the number of polyforms in $i_3$ that are doubl
 \end{center}
 
 \begin{equation*}
-    r_3(n,m) = \sum_{j=0}^{m-2}\frac{2}{3}(n-1)(m-1-j)((m-1-j)^2 -1) + \sum_{i=0}^{n-2}\frac{2}{3}(m-1)(n-1-i)((n-1-i)^2 -1)
+    R_3(x,y) = \sum_{n,m \geq 0} r_3(n,m) x^n y^m = \left(\frac{4x^2 y^3}{(1-x)^2 (1-y)^4} + \frac{4x^3 y^2}{(1-x)^4 (1-y)^2}\right)
 \end{equation*}
-
-for $n,m \geq 2.$
 
 The subclass $i_4$ counts the number of polyforms of the following type
 
@@ -1437,7 +1471,7 @@ The subclass $i_4$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{eqnarray*}
-    i_4(n,m) & = & \sum_{i=0}^{n-1}\sum_{j=0}^{m-1} \binom{i+j+1}{i-j}_2 (n-1-i)(n-2-i)(m-1-j)(m-2-j) \\ 
+    I_4(x,y) = \sum_{n,m \geq 0}i_4(n,m)x^n y^m & = & G(x,y)\left(\frac{4x^3 y^3}{(1-x)^3 (1-y)^3}\right) \\ 
 \end{eqnarray*}
 
 The subclass $i_5$ counts the number of polyforms of the following type
@@ -1494,15 +1528,29 @@ The subclass $i_5$ counts the number of polyforms of the following type
 \end{center}
 
 \begin{equation*}
-    i_5(n,m)= nm-4
+    I_5(x,y) = \sum_{n,m \geq 0} i_5(n,m) x^n y^m = \frac{xy}{(1-x)^2 (1-y)^2} - \frac{4x^2 y^2}{(1-x) (1-y)} - \frac{xy}{(1-x)^2} - \frac{xy}{(1-y)^2} + xy
 \end{equation*}
 
+which gives 
 
-Finally, we have 
+\begin{equation*}
+    I(x,y) = (2I_0 + 4I_1 + 4I_{1,1} + R_1 + 2I_2 + 2I_3 - R_3 + 4I_4 + I_5)(x,y).
+\end{equation*}
 
-$$\rho(A^{S^*}_{n,m}) = 2cc(n,m) + 4c(n,m) -6(n+m-2) +i(n,m)$$
+Introducing the following corrective term
 
-which gives the result. 
+\begin{equation*}
+    T_r(x,y) = \frac{6x^2 y^2}{(1-x)^2 (1-y)} + \frac{6x^2 y^2}{(1-x) (1-y)^2}
+\end{equation*}
+
+allows us to write a full expression for the generating function, namely 
+
+\begin{eqnarray*}
+    \sum_{n,m \geq 0}\rho(A^{S^*}_{n,m})x^n y^m & = & (2CC + 4C + I - T_r)(x,y) + 2 +xy - \frac{4x}{(1-x)}- \frac{4y}{(1-y)} - \frac{2xy}{(1-x)^3} - \frac{2xy}{(1-y)^3} \\
+    & + & \frac{(x+3x^2 -x^3 -x^4)y}{(1-x)^5} + \frac{(y+3y^2 -y^3 -y^4)x}{(1-y)^5}.\\
+\end{eqnarray*}
+
+This gives the result. 
 
 \end{proof}
 
