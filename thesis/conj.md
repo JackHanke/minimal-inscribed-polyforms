@@ -1,7 +1,10 @@
 ## Conjecture
 
-$$\rho(\Delta_{d,n+1}^*) = f_d(n) = \sum_{\substack{\sum_{i=0}^{d+1}k_i=n\\ 0 \leq k_i \leq n}} \prod_{i} \frac{(n-k_i)!}{(k_i)!^d}$$
+Let 
+$$f_d(n) = \sum_{\substack{n=\sum_{i=0}^{d}k_i\\ 0 \leq k_i \leq n}} \prod_{i} \frac{(n-k_i)!}{(k_i)!^d}.$$
 
+Then
+$$\rho(\Delta_{d,n}^*) = f_d(n-1).$$
 
 ## Table of $f(d,n)$
 | (d,n) | 1 | 2 | 3 | 4 | 5 | 
