@@ -1,5 +1,7 @@
 ## Conjecture
 
+THIS MIGHT NOT BE RIGHT
+
 Let 
 $$f_d(n) = \sum_{\substack{n=\sum_{i=0}^{d}k_i\\ 0 \leq k_i \leq n}} \prod_{i} \frac{(n-k_i)!}{(k_i)!^d}.$$
 
